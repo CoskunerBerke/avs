@@ -79,10 +79,12 @@ export const Hero: React.FC = () => {
       onMouseEnter={() => setIsPlaying(false)}
       onMouseLeave={() => setIsPlaying(true)}
     >
-      {/* Büyük Atölye Arka Plan Görseli */}
+      {/* Büyük Atölye Arka Plan Görseli (Dinamik Gerçek Fotoğraflar) */}
       <div 
-        className="absolute inset-0 bg-cover bg-center z-0" 
-        style={{ backgroundImage: "url('/images/vag_service_hero.png')" }}
+        className="absolute inset-0 bg-cover bg-center z-0 transition-all duration-1000" 
+        style={{ 
+          backgroundImage: `url(${currentSlide === 0 ? '/images/avs_workshop_1.png' : '/images/avs_workshop_2.png'})` 
+        }}
       />
       
       {/* Ekran Karartma Katmanı */}

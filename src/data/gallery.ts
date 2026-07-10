@@ -3,31 +3,31 @@ import { GalleryItem } from "@/types";
 export const galleryData: GalleryItem[] = [
   {
     id: "g1",
-    src: "/images/gallery/workshop.webp",
-    alt: "AVS Servis Genel Atölye",
+    src: "/images/avs_workshop_1.png",
+    alt: "AVS Servis Dış Cephe",
     category: "workshop",
-    caption: "AVS Service & Repair Genel Çalışma Alanı"
+    caption: "AVS Servis Dış Görünüm ve Araç Kabul Alanı"
   },
   {
     id: "g2",
-    src: "/images/gallery/diagnostics.webp",
-    alt: "Bilgisayarlı Arıza Tespit Cihazı",
-    category: "diagnostics",
-    caption: "Modern Teşhis Cihazlarıyla Bilgisayarlı Arıza Tespiti"
+    src: "/images/avs_workshop_2.png",
+    alt: "AVS Atölye İçi ve Lifler",
+    category: "workshop",
+    caption: "AVS Servis Atölye İçi ve Genel Çalışma Alanı"
   },
   {
     id: "g3",
-    src: "/images/gallery/maintenance.webp",
-    alt: "Periyodik Araç Bakımı",
+    src: "/images/avs_workshop_3.jpg",
+    alt: "AVS Mekanik Servis ve Bakım",
     category: "maintenance",
-    caption: "Profesyonel Filtre ve Sıvı Seviyesi Kontrolleri"
+    caption: "Lif Üzerinde Mekanik Onarım ve Detaylı Teşhis Süreçleri"
   },
   {
     id: "g4",
-    src: "/images/gallery/engine.webp",
-    alt: "Motor Mekanik Onarımı",
+    src: "/images/avs_workshop_4.png",
+    alt: "AVS Şanzıman ve Genel Onarım",
     category: "engine",
-    caption: "Detaylı Motor ve triger Değişim İşlemleri"
+    caption: "DSG/Şanzıman ve Genel Motor Mekanik Çalışmaları"
   },
   {
     id: "g5",

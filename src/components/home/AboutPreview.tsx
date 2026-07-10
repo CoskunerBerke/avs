@@ -58,16 +58,16 @@ export const AboutPreview: React.FC = () => {
           <div className="lg:col-span-6">
             <div className="relative w-full h-[320px] md:h-[400px] rounded-2xl overflow-hidden border border-gray-200 shadow-lg">
               <Image
-                src="/images/vag_service_dsg.png"
-                alt="AVS DSG Mekatronik Revizyon ve Şanzıman Onarım"
+                src="/images/avs_workshop_4.png"
+                alt="AVS DSG Mekatronik Şanzıman Onarım ve Lif Alanları"
                 fill
                 sizes="(max-w-768px) 100vw, 50vw"
                 className="object-cover"
                 priority
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-5 text-white">
-                <span className="text-[10px] font-bold text-brand-red uppercase tracking-widest">DSG & Şanzıman Revizyonu</span>
-                <h4 className="text-xs font-bold uppercase tracking-wider mt-1">Garantili Çift Kavrama, Basınç Tüpü ve Beyin Onarımları</h4>
+                <span className="text-[10px] font-bold text-brand-red uppercase tracking-widest">DSG & Mekatronik Revizyon</span>
+                <h4 className="text-xs font-bold uppercase tracking-wider mt-1">Orijinal Basınç Tüpü Değişimi, Çift Kavrama Onarımı ve Temel Ayarlar</h4>
               </div>
             </div>
           </div>

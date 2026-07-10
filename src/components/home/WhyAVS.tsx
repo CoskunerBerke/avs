@@ -74,12 +74,12 @@ export const WhyAVS: React.FC = () => {
             </div>
           </div>
 
-          {/* Sağ Kolon: Büyük Bilgisayarlı Arıza Tespit Görseli */}
+          {/* Sağ Kolon: Büyük Gerçek Atölye Görseli */}
           <div className="lg:col-span-6 flex flex-col gap-3">
             <div className="relative w-full h-[320px] md:h-[400px] rounded-2xl overflow-hidden border border-gray-200 shadow-lg">
               <Image
-                src="/images/vag_service_diagnostic.png"
-                alt="AVS Bilgisayarlı Arıza Tespit ve VAG Teşhis"
+                src="/images/avs_workshop_3.jpg"
+                alt="AVS Özel Servis Atölyesi ve Mekanik Bakım"
                 fill
                 sizes="(max-w-768px) 100vw, 50vw"
                 className="object-cover"
@@ -87,8 +87,8 @@ export const WhyAVS: React.FC = () => {
               />
               {/* Resim Altı Detay Katmanı */}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-5 text-white">
-                <span className="text-[10px] font-bold text-brand-red uppercase tracking-widest">Modern Teşhis Sistemleri</span>
-                <h4 className="text-xs font-bold uppercase tracking-wider mt-1">Orijinal VAG-COM Arıza Tespit Cihazı ile Noktasal Ölçüm</h4>
+                <span className="text-[10px] font-bold text-brand-red uppercase tracking-widest">Mekanik Onarım & Lifler</span>
+                <h4 className="text-xs font-bold uppercase tracking-wider mt-1">Geniş ve Modern Atölyemizde Aynı Anda Çoklu Araç Servis Desteği</h4>
               </div>
             </div>
           </div>
