@@ -36,6 +36,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
   const navLinks = [
     { label: "Ana Sayfa", href: "/" },
     { label: "Hakkımızda", href: "/hakkimizda" },
+    { label: "Şubelerimiz", href: "/subelerimiz" },
     { label: "Galeri", href: "/galeri" },
     { label: "İletişim", href: "/iletisim" },
   ];

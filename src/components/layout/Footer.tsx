@@ -65,6 +65,11 @@ export const Footer: React.FC = () => {
               </Link>
             </li>
             <li>
+              <Link href="/subelerimiz" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-200">
+                Şubelerimiz
+              </Link>
+            </li>
+            <li>
               <Link href="/hizmetler" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-200">
                 Hizmetlerimiz
               </Link>

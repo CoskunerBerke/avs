@@ -4,7 +4,7 @@ import nodemailer from "nodemailer";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { fullName, phone, email, vehicleModel, serviceType, message, kvkkApproved } = body;
+    const { fullName, phone, email, vehicleModel, serviceType, branch, message, kvkkApproved } = body;
 
     // Temel Alan Doğrulamaları
     if (!fullName || !phone || !vehicleModel || !serviceType || !message) {
@@ -26,6 +26,8 @@ export async function POST(request: Request) {
 
     const isSmtpConfigured = !!(CONTACT_EMAIL && SMTP_HOST && SMTP_PORT && SMTP_USER && SMTP_PASS);
 
+    const branchName = branch === "caycuma" ? "Çaycuma Şubesi" : "Bartın Merkez Şubesi";
+
     const logMessage = `
 ========================================
 AVS İLETİŞİM FORMU TALEBİ (YENİ)
@@ -33,6 +35,7 @@ AVS İLETİŞİM FORMU TALEBİ (YENİ)
 Ad Soyad: ${fullName}
 Telefon: ${phone}
 E-posta: ${email || "Belirtilmedi"}
+Şube: ${branchName}
 Araç Marka/Model: ${vehicleModel}
 Talep Edilen Hizmet: ${serviceType}
 Mesaj: ${message}
@@ -56,13 +59,14 @@ KVKK Onayı: ${kvkkApproved ? "Evet" : "Hayır"}
         from: `"${fullName}" <${SMTP_USER}>`,
         to: CONTACT_EMAIL,
         replyTo: email || undefined,
-        subject: `Yeni Randevu Talebi: ${fullName} - ${serviceType}`,
+        subject: `Yeni Randevu Talebi: ${fullName} - ${serviceType} (${branchName})`,
         text: logMessage,
         html: `
           <h3>Yeni Servis Randevu Talebi</h3>
           <p><strong>Ad Soyad:</strong> ${fullName}</p>
           <p><strong>Telefon:</strong> ${phone}</p>
           <p><strong>E-posta:</strong> ${email || "Belirtilmedi"}</p>
+          <p><strong>Şube:</strong> ${branchName}</p>
           <p><strong>Araç Marka/Model:</strong> ${vehicleModel}</p>
           <p><strong>Hizmet Tipi:</strong> ${serviceType}</p>
           <p><strong>Mesaj:</strong> ${message}</p>

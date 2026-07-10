@@ -11,6 +11,7 @@ export const ContactForm: React.FC = () => {
     email: "",
     vehicleModel: "",
     serviceType: "",
+    branch: "bartin", // varsayılan şube
     message: "",
     kvkkApproved: false,
     website: "", // Honeypot spam koruma alanı
@@ -68,6 +69,7 @@ export const ContactForm: React.FC = () => {
           email: formData.email || undefined,
           vehicleModel: formData.vehicleModel,
           serviceType: formData.serviceType,
+          branch: formData.branch,
           message: formData.message,
           kvkkApproved: formData.kvkkApproved,
         }),
@@ -84,6 +86,7 @@ export const ContactForm: React.FC = () => {
           email: "",
           vehicleModel: "",
           serviceType: "",
+          branch: "bartin",
           message: "",
           kvkkApproved: false,
           website: "",
@@ -203,8 +206,8 @@ export const ContactForm: React.FC = () => {
         </div>
       </div>
 
-      {/* Araç Marka / Model & Hizmet Seçimi */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {/* Araç Marka / Model, Şube & Hizmet Seçimi */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* Araç Marka/Model */}
         <div className="flex flex-col gap-1.5">
           <label htmlFor="vehicleModel" className="text-xs font-bold text-brand-charcoal uppercase tracking-wider">
@@ -220,6 +223,24 @@ export const ContactForm: React.FC = () => {
             placeholder="Örn: VW Golf 2018 1.6 TDI"
             className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-lg text-xs text-brand-charcoal focus:border-brand-red focus:outline-none transition-colors"
           />
+        </div>
+
+        {/* Tercih Edilen Şube */}
+        <div className="flex flex-col gap-1.5">
+          <label htmlFor="branch" className="text-xs font-bold text-brand-charcoal uppercase tracking-wider">
+            Tercih Edilen Şube <span className="text-brand-red">*</span>
+          </label>
+          <select
+            id="branch"
+            name="branch"
+            required
+            value={formData.branch}
+            onChange={handleChange}
+            className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-lg text-xs text-brand-charcoal focus:border-brand-red focus:outline-none transition-colors"
+          >
+            <option value="bartin">Bartın Merkez Şubesi</option>
+            <option value="caycuma">Çaycuma Şubesi</option>
+          </select>
         </div>
 
         {/* Hizmet Seçimi */}
