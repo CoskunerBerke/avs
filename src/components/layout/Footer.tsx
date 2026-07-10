@@ -14,20 +14,20 @@ export const Footer: React.FC = () => {
   const footerServices = servicesData.slice(0, 5);
 
   return (
-    <footer className="bg-brand-charcoal text-gray-300 border-t border-brand-border pt-16 pb-24 md:pb-12 px-6">
+    <footer className="bg-brand-gray text-brand-gray-dark border-t border-gray-250 pt-16 pb-24 md:pb-12 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* Kolon 1: AVS Hakkında */}
         <div className="flex flex-col gap-4">
-          <Logo light={true} />
-          <p className="text-xs text-gray-400 leading-relaxed mt-2">
-            AVS Service & Repair, Bartın Merkez’de profesyonel ekipmanlar ve tecrübeli usta kadrosuyla tüm araç marka ve modellerinde güvenilir bakım, teşhis ve mekanik onarım çözümleri sunar.
+          <Logo light={false} />
+          <p className="text-xs text-brand-gray-dark leading-relaxed mt-2">
+            AVS Servis, Bartın ve Çaycuma şubelerinde profesyonel ekipmanlar ve tecrübeli usta kadrosuyla tüm araç marka ve modellerinde güvenilir bakım, teşhis ve mekanik onarım çözümleri sunar.
           </p>
           <div className="flex items-center gap-3 mt-2">
             <a
               href={businessConfig.socialLinks.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 rounded-lg bg-brand-charcoal-light flex items-center justify-center hover:bg-brand-red hover:text-white transition-colors duration-200"
+              className="w-8 h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center text-brand-charcoal hover:bg-brand-red hover:text-white transition-colors duration-200"
               aria-label="Instagram"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -38,7 +38,7 @@ export const Footer: React.FC = () => {
               href={businessConfig.socialLinks.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 rounded-lg bg-brand-charcoal-light flex items-center justify-center hover:bg-brand-red hover:text-white transition-colors duration-200"
+              className="w-8 h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center text-brand-charcoal hover:bg-brand-red hover:text-white transition-colors duration-200"
               aria-label="Facebook"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -50,37 +50,37 @@ export const Footer: React.FC = () => {
 
         {/* Kolon 2: Hızlı Bağlantılar */}
         <div>
-          <h4 className="text-sm font-bold uppercase tracking-wider text-white border-l-2 border-brand-red pl-3.5 mb-6">
+          <h4 className="text-sm font-bold uppercase tracking-wider text-brand-charcoal border-l-2 border-brand-red pl-3.5 mb-6">
             Hızlı Bağlantılar
           </h4>
           <ul className="flex flex-col gap-3.5 text-xs">
             <li>
-              <Link href="/" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-200">
+              <Link href="/" className="hover:text-brand-red hover:translate-x-1 inline-block transition-all duration-200">
                 Ana Sayfa
               </Link>
             </li>
             <li>
-              <Link href="/hakkimizda" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-200">
+              <Link href="/hakkimizda" className="hover:text-brand-red hover:translate-x-1 inline-block transition-all duration-200">
                 Hakkımızda
               </Link>
             </li>
             <li>
-              <Link href="/subelerimiz" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-200">
+              <Link href="/subelerimiz" className="hover:text-brand-red hover:translate-x-1 inline-block transition-all duration-200">
                 Şubelerimiz
               </Link>
             </li>
             <li>
-              <Link href="/hizmetler" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-200">
+              <Link href="/hizmetler" className="hover:text-brand-red hover:translate-x-1 inline-block transition-all duration-200">
                 Hizmetlerimiz
               </Link>
             </li>
             <li>
-              <Link href="/galeri" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-200">
+              <Link href="/galeri" className="hover:text-brand-red hover:translate-x-1 inline-block transition-all duration-200">
                 Fotoğraf Galerisi
               </Link>
             </li>
             <li>
-              <Link href="/iletisim" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-200">
+              <Link href="/iletisim" className="hover:text-brand-red hover:translate-x-1 inline-block transition-all duration-200">
                 İletişim & Konum
               </Link>
             </li>
@@ -89,7 +89,7 @@ export const Footer: React.FC = () => {
 
         {/* Kolon 3: Hizmetlerimiz (Öne Çıkanlar) */}
         <div>
-          <h4 className="text-sm font-bold uppercase tracking-wider text-white border-l-2 border-brand-red pl-3.5 mb-6">
+          <h4 className="text-sm font-bold uppercase tracking-wider text-brand-charcoal border-l-2 border-brand-red pl-3.5 mb-6">
             Popüler Hizmetler
           </h4>
           <ul className="flex flex-col gap-3.5 text-xs">
@@ -97,7 +97,7 @@ export const Footer: React.FC = () => {
               <li key={service.slug}>
                 <Link
                   href={`/hizmetler/${service.slug}`}
-                  className="hover:text-white hover:translate-x-1 inline-block transition-all duration-200"
+                  className="hover:text-brand-red hover:translate-x-1 inline-block transition-all duration-200"
                 >
                   {service.title}
                 </Link>
@@ -108,7 +108,7 @@ export const Footer: React.FC = () => {
 
         {/* Kolon 4: İletişim Bilgileri */}
         <div>
-          <h4 className="text-sm font-bold uppercase tracking-wider text-white border-l-2 border-brand-red pl-3.5 mb-6">
+          <h4 className="text-sm font-bold uppercase tracking-wider text-brand-charcoal border-l-2 border-brand-red pl-3.5 mb-6">
             İletişim & Ulaşım
           </h4>
           <ul className="flex flex-col gap-4 text-xs">
@@ -118,24 +118,24 @@ export const Footer: React.FC = () => {
                 href={businessConfig.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white leading-relaxed"
+                className="hover:text-brand-red leading-relaxed"
               >
                 {businessConfig.fullAddress}
               </a>
             </li>
             <li className="flex items-center gap-2.5">
               <Phone className="w-4 h-4 text-brand-red flex-shrink-0" />
-              <a href={`tel:${businessConfig.phoneFormatted}`} className="hover:text-white">
+              <a href={`tel:${businessConfig.phoneFormatted}`} className="hover:text-brand-red">
                 {businessConfig.phone}
               </a>
             </li>
             <li className="flex items-center gap-2.5">
               <Mail className="w-4 h-4 text-brand-red flex-shrink-0" />
-              <a href={`mailto:${businessConfig.email}`} className="hover:text-white">
+              <a href={`mailto:${businessConfig.email}`} className="hover:text-brand-red">
                 {businessConfig.email}
               </a>
             </li>
-            <li className="flex items-start gap-2.5 text-gray-400">
+            <li className="flex items-start gap-2.5 text-brand-gray-dark">
               <Clock className="w-4 h-4 text-brand-red flex-shrink-0 mt-0.5" />
               <div>
                 <p>{businessConfig.openingHours.weekdays}</p>
@@ -148,16 +148,16 @@ export const Footer: React.FC = () => {
       </div>
 
       {/* Alt Alt-Bar */}
-      <div className="max-w-7xl mx-auto border-t border-brand-border mt-16 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+      <div className="max-w-7xl mx-auto border-t border-gray-250 mt-16 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-brand-gray-dark">
         <p>© {currentYear} {businessConfig.name}. Tüm Hakları Saklıdır.</p>
         <div className="flex items-center gap-6 flex-wrap justify-center">
-          <Link href="/gizlilik-politikasi" className="hover:text-white transition-colors">
+          <Link href="/gizlilik-politikasi" className="hover:text-brand-red transition-colors">
             Gizlilik Politikası
           </Link>
-          <Link href="/kvkk" className="hover:text-white transition-colors">
+          <Link href="/kvkk" className="hover:text-brand-red transition-colors">
             KVKK Metni
           </Link>
-          <Link href="/cerez-politikasi" className="hover:text-white transition-colors">
+          <Link href="/cerez-politikasi" className="hover:text-brand-red transition-colors">
             Çerez Politikası
           </Link>
         </div>

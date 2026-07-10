@@ -32,22 +32,22 @@ export const TrustBar: React.FC = () => {
   ];
 
   return (
-    <section className="bg-brand-charcoal-light py-10 px-6 border-b border-brand-border relative z-20">
+    <section className="bg-brand-gray py-10 px-6 border-b border-gray-200 relative z-20">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {trustPoints.map((point, index) => (
             <div
               key={index}
-              className="flex gap-4 p-5 rounded-xl bg-brand-charcoal border border-brand-border/40 hover:border-brand-border transition-all duration-300 group"
+              className="flex gap-4 p-5 rounded-xl bg-white border border-gray-200 hover:border-brand-red/35 shadow-sm transition-all duration-300 group"
             >
-              <div className="flex-shrink-0 p-2.5 rounded-lg bg-brand-charcoal-light border border-brand-border/50 group-hover:bg-brand-red/10 group-hover:border-brand-red/30 transition-all duration-300">
+              <div className="flex-shrink-0 p-2.5 rounded-lg bg-brand-gray border border-gray-200 group-hover:bg-brand-red/10 group-hover:border-brand-red/20 transition-all duration-300">
                 {point.icon}
               </div>
               <div className="flex flex-col">
-                <h3 className="text-sm font-bold uppercase tracking-wider text-white">
+                <h3 className="text-sm font-bold uppercase tracking-wider text-brand-charcoal">
                   {point.title}
                 </h3>
-                <p className="text-xs text-gray-400 mt-2 leading-relaxed">
+                <p className="text-xs text-brand-gray-dark mt-2 leading-relaxed">
                   {point.description}
                 </p>
               </div>

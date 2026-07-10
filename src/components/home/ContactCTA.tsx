@@ -7,16 +7,16 @@ export const ContactCTA: React.FC = () => {
   const whatsappUrl = `https://wa.me/${businessConfig.whatsappFormatted}?text=${encodedMessage}`;
 
   return (
-    <section className="bg-brand-charcoal text-white py-16 px-6 border-t border-brand-border relative overflow-hidden">
+    <section className="bg-brand-gray text-brand-charcoal py-16 px-6 border-t border-b border-gray-250 relative overflow-hidden">
       {/* Background carbon texture grid */}
       <div className="absolute inset-0 bg-grid-pattern opacity-10 z-0"></div>
 
       <div className="max-w-5xl mx-auto text-center z-10 relative">
-        <h2 className="text-2xl md:text-3xl font-black uppercase tracking-wider text-white leading-tight">
+        <h2 className="text-2xl md:text-3xl font-black uppercase tracking-wider text-brand-charcoal leading-tight">
           Aracınız İçin Servis Desteğine mi İhtiyacınız Var?
         </h2>
         
-        <p className="text-xs md:text-sm text-gray-400 mt-4 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-xs md:text-sm text-brand-gray-dark mt-4 max-w-2xl mx-auto leading-relaxed">
           Gecikmiş periyodik bakımlar, şanzıman titremeleri veya yanıp sönen motor arıza lambaları... Aracınızın tüm sorunları için doğrudan bizimle iletişime geçin. Şeffaf ve dürüst çözümlerle yanınızdayız.
         </p>
 
@@ -53,7 +53,7 @@ export const ContactCTA: React.FC = () => {
             href={businessConfig.googleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2.5 px-6 py-3.5 w-full sm:w-auto bg-brand-charcoal-card border border-brand-border text-gray-300 text-xs font-bold uppercase tracking-wider rounded-lg hover:bg-brand-border hover:text-white hover:scale-105 active:scale-95 transition-all duration-200"
+            className="flex items-center justify-center gap-2.5 px-6 py-3.5 w-full sm:w-auto bg-white border border-gray-250 text-brand-charcoal text-xs font-bold uppercase tracking-wider rounded-lg hover:bg-brand-gray hover:text-brand-red hover:scale-105 active:scale-95 transition-all duration-200"
           >
             <MapPin className="w-4 h-4 text-brand-red" />
             Yol Tarifi Al
