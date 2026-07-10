@@ -32,7 +32,7 @@ export const BrandExpertise: React.FC = () => {
           {brands.map((brand, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-center p-6 bg-brand-gray/30 border border-gray-100 rounded-xl text-center hover:bg-brand-charcoal hover:text-white transition-all duration-300 group"
+              className="flex flex-col items-center justify-center p-6 bg-brand-gray/40 border border-gray-250 rounded-xl text-center hover:bg-brand-red hover:text-white transition-all duration-300 group"
             >
               <span className="text-lg md:text-xl font-black tracking-widest text-brand-charcoal group-hover:text-brand-red transition-colors duration-200">
                 {brand.name}

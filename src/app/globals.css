@@ -8,10 +8,10 @@
   --brand-red-hover: #07477c; /* Koyu mavi hover rengi */
   --brand-charcoal: #0c0d0e;
   --brand-charcoal-light: #16181a;
-  --brand-charcoal-card: #1f2124;
-  --brand-gray: #f3f4f6;
-  --brand-gray-dark: #6b7280;
-  --brand-border: #2a2d31;
+  --brand-charcoal-card: #ffffff; /* Açık temada kartlar beyaz */
+  --brand-gray: #f9fafb; /* Daha temiz açık gri arka plan */
+  --brand-gray-dark: #4b5563; /* Daha okunaklı koyu gri metin rengi */
+  --brand-border: #e5e7eb; /* Açık gri sınır çizgileri */
 }
 
 @theme {

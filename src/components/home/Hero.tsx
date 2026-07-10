@@ -79,17 +79,18 @@ export const Hero: React.FC = () => {
       onMouseEnter={() => setIsPlaying(false)}
       onMouseLeave={() => setIsPlaying(true)}
     >
-      {/* Endüstriyel Karbon ve Izgara Desenli Arka Plan */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-40 z-0"></div>
+      {/* Büyük Atölye Arka Plan Görseli */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center z-0" 
+        style={{ backgroundImage: "url('/images/vag_service_hero.png')" }}
+      />
       
-      {/* Kademeli Degrade Maske */}
-      <div className="absolute inset-0 bg-gradient-to-r from-brand-charcoal via-brand-charcoal/90 to-transparent z-0"></div>
-      
-      {/* İnce Kırmızı Spor Çizgi Animasyonu */}
-      <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-brand-red via-brand-red/50 to-transparent"></div>
+      {/* Ekran Karartma Katmanı */}
+      <div className="absolute inset-0 bg-black/50 z-0"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-0"></div>
 
       <div className="max-w-7xl mx-auto px-6 w-full py-16 md:py-24 z-10 relative">
-        <div className="max-w-3xl">
+        <div className="max-w-2xl bg-black/60 backdrop-blur-md p-8 md:p-10 rounded-2xl border border-white/10 shadow-2xl animate-fade-in">
           {/* Slayt İçerikleri */}
           {slides.map((slide, index) => {
             const isActive = index === currentSlide;
@@ -104,12 +105,12 @@ export const Hero: React.FC = () => {
                 aria-hidden={!isActive}
               >
                 {/* Küçük Başlık (Eyebrow) */}
-                <div className="inline-flex items-center gap-2.5 px-3 py-1 bg-brand-charcoal-light border border-brand-border/60 rounded text-brand-red text-xs font-bold uppercase tracking-widest -skew-x-6 w-fit mb-6">
+                <div className="inline-flex items-center gap-2.5 px-3 py-1 bg-brand-red text-white border border-brand-red/60 rounded text-[10px] font-extrabold uppercase tracking-widest -skew-x-6 w-fit mb-6">
                   <span className="skew-x-6">{slide.eyebrow}</span>
                 </div>
 
                 {/* Ana Başlık */}
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-wide leading-tight sm:leading-none text-white">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-wide leading-tight text-white">
                   {slide.headline.split(", ").map((part, i) => (
                     <span key={i} className="block mt-1 first:mt-0">
                       {part}
@@ -118,17 +119,17 @@ export const Hero: React.FC = () => {
                 </h1>
 
                 {/* Açıklama Metni */}
-                <p className="text-sm md:text-base text-gray-400 mt-6 leading-relaxed max-w-2xl">
+                <p className="text-xs md:text-sm text-gray-300 mt-5 leading-relaxed max-w-xl">
                   {slide.description}
                 </p>
 
                 {/* CTA Butonları */}
-                <div className="flex flex-wrap items-center gap-4 mt-10">
+                <div className="flex flex-wrap items-center gap-3.5 mt-8">
                   <Link
                     href={slide.primaryCtaHref}
-                    className="flex items-center gap-2 px-6 py-3.5 bg-brand-red text-white text-xs font-bold uppercase tracking-wider rounded-lg hover:bg-brand-red-hover hover:scale-105 active:scale-95 shadow-lg shadow-brand-red/20 transition-all duration-200"
+                    className="flex items-center gap-2 px-5 py-3 bg-brand-red text-white text-xs font-black uppercase tracking-wider rounded-lg hover:bg-brand-red-hover hover:scale-105 active:scale-95 shadow-md shadow-brand-red/20 transition-all duration-200"
                   >
-                    <Calendar className="w-4 h-4" />
+                    <Calendar className="w-3.5 h-3.5" />
                     {slide.primaryCtaText}
                   </Link>
 
@@ -137,9 +138,9 @@ export const Hero: React.FC = () => {
                       href={slide.secondaryCtaHref}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-6 py-3.5 bg-brand-charcoal-card border border-brand-border hover:bg-brand-border hover:text-white text-xs font-bold uppercase tracking-wider rounded-lg hover:scale-105 active:scale-95 transition-all duration-200"
+                      className="flex items-center gap-2 px-5 py-3 bg-white/15 border border-white/20 hover:bg-white/25 text-white text-xs font-black uppercase tracking-wider rounded-lg hover:scale-105 active:scale-95 transition-all duration-200"
                     >
-                      <MessageSquare className="w-4 h-4 text-[#25D366]" />
+                      <MessageSquare className="w-3.5 h-3.5 text-[#25D366]" />
                       {slide.secondaryCtaText}
                     </a>
                   ) : (
@@ -147,9 +148,9 @@ export const Hero: React.FC = () => {
                       href={slide.secondaryCtaHref}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-6 py-3.5 bg-brand-charcoal-card border border-brand-border hover:bg-brand-border hover:text-white text-xs font-bold uppercase tracking-wider rounded-lg hover:scale-105 active:scale-95 transition-all duration-200"
+                      className="flex items-center gap-2 px-5 py-3 bg-white/15 border border-white/20 hover:bg-white/25 text-white text-xs font-black uppercase tracking-wider rounded-lg hover:scale-105 active:scale-95 transition-all duration-200"
                     >
-                      <MapPin className="w-4 h-4 text-brand-red" />
+                      <MapPin className="w-3.5 h-3.5 text-brand-red" />
                       {slide.secondaryCtaText}
                     </a>
                   )}
