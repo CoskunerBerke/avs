@@ -1,0 +1,35 @@
+# AVS Service & Repair - Proje Yapılacaklar Listesi
+
+- [x] Projenin Başlatılması ve Altyapı Kurulumu
+  - [x] `create-next-app` ile src dizinli Next.js projesinin oluşturulması
+  - [x] Tailwind CSS, TypeScript ve temel yapılandırma dosyalarının ayarlanması
+  - [x] Docker dosyaları (`Dockerfile`, `.dockerignore`) ve `.env.example` oluşturulması
+- [x] Yapılandırma ve Veri Dosyaları
+  - [x] `src/config/business.ts` merkezi işletme yapılandırması
+  - [x] `src/data/services.ts` 12 hizmetin detaylı verisi
+  - [x] `src/data/gallery.ts` galeri verisi
+- [x] Ortak Düzen ve Arayüz Bileşenleri (Layout & UI)
+  - [x] Sticky Header (TopBar, Nav, Logo, Masaüstü/Mobil Menüler)
+  - [x] Responsive Footer
+  - [x] WhatsApp ve Mobil Alt Bar (MobileActionBar)
+  - [x] Çerez Notice (CookieBanner)
+  - [x] Breadcrumbs ve JSON-LD Yapılandırılmış Veri bileşenleri
+- [x] Sayfa Bileşenleri ve Ana Sayfa
+  - [x] Hero Bölümü (Slider/Statik premium arayüz)
+  - [x] TrustBar, ServicesGrid, WhyAVS
+  - [x] BrandExpertise, ProcessSteps, AboutPreview, GalleryPreview, ContactCTA
+  - [x] Ana Sayfa bütünleştirmesi (`src/app/page.tsx`)
+- [x] Diğer Sayfalar
+  - [x] Hakkımızda Sayfası (`/hakkimizda`)
+  - [x] Hizmetler Sayfası (`/hizmetler`)
+  - [x] Dinamik Hizmet Detay Sayfası (`/hizmetler/[slug]`)
+  - [x] Galeri Sayfası (Lightbox destekli, `/galeri`)
+  - [x] İletişim Sayfası ve İletişim Formu (`/iletisim`)
+  - [x] Yasal Sayfalar (`/kvkk`, `/gizlilik-politikasi`, `/cerez-politikasi`)
+- [x] Arka Plan Entegrasyonları ve SEO
+  - [x] İletişim Formu API Rotaları (`/api/contact`)
+  - [x] Dinamik Sitemap (`/sitemap.ts`) ve Robots (`/robots.ts`)
+- [x] Kalite Kontrol ve Dağıtım Belgelendirmesi
+  - [x] Projenin yerel derlenmesi (`npm run build`)
+  - [x] Linting ve TypeScript hatalarının giderilmesi
+  - [x] Detaylı Türkçe `README.md` hazırlanması
