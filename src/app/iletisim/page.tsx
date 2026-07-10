@@ -1,5 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Phone, MapPin, Clock, MessageSquare } from "lucide-react";
 import { businessConfig } from "@/config/business";
@@ -112,19 +113,30 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    {/* Google Harita Iframe */}
-                    <div className="w-full h-44 rounded-xl overflow-hidden border border-gray-200 relative">
-                      <iframe
-                        title={`${branch.name} Google Haritası`}
-                        src={branch.googleMapsEmbedUrl}
-                        width="100%"
-                        height="100%"
-                        style={{ border: 0 }}
-                        allowFullScreen={true}
-                        loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade"
-                        className="absolute inset-0"
-                      />
+                    {/* Google Harita Iframe ve Şube Görseli Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="w-full h-44 rounded-xl overflow-hidden border border-gray-200 relative">
+                        <iframe
+                          title={`${branch.name} Google Haritası`}
+                          src={branch.googleMapsEmbedUrl}
+                          width="100%"
+                          height="100%"
+                          style={{ border: 0 }}
+                          allowFullScreen={true}
+                          loading="lazy"
+                          referrerPolicy="no-referrer-when-downgrade"
+                          className="absolute inset-0"
+                        />
+                      </div>
+
+                      <div className="w-full h-44 rounded-xl overflow-hidden border border-gray-200 relative bg-brand-gray">
+                        <Image
+                          src={branch.id === "bartin" ? "/images/avs_bartin_branch.png" : "/images/avs_workshop_1.png"}
+                          alt={`${branch.name} Dış Görünümü`}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
                     </div>
                   </div>
                 );

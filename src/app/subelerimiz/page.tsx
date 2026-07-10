@@ -1,5 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Phone, MapPin, Clock, MessageSquare, ExternalLink } from "lucide-react";
 import { businessConfig } from "@/config/business";
@@ -110,19 +111,30 @@ export default function BranchesPage() {
 
                 {/* Harita ve Aksiyon Butonları */}
                 <div className="flex flex-col gap-6 mt-8 pt-6 border-t border-gray-200/80">
-                  {/* Harita Embed */}
-                  <div className="w-full h-48 rounded-xl overflow-hidden border border-gray-200 shadow-inner relative">
-                    <iframe
-                      src={branch.googleMapsEmbedUrl}
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen={false}
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title={`${branch.name} Konumu`}
-                      className="absolute inset-0"
-                    />
+                  {/* Harita ve Görsel Grid */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="w-full h-48 rounded-xl overflow-hidden border border-gray-200 shadow-inner relative">
+                      <iframe
+                        src={branch.googleMapsEmbedUrl}
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen={false}
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title={`${branch.name} Konumu`}
+                        className="absolute inset-0"
+                      />
+                    </div>
+
+                    <div className="w-full h-48 rounded-xl overflow-hidden border border-gray-200 relative bg-brand-gray">
+                      <Image
+                        src={branch.id === "bartin" ? "/images/avs_bartin_branch.png" : "/images/avs_workshop_1.png"}
+                        alt={`${branch.name} Dış Görünümü`}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
                   </div>
 
                   {/* Butonlar */}
