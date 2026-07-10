@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Image as ImageIcon, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { galleryData, galleryCategories } from "@/data/gallery";
@@ -106,6 +107,15 @@ export default function GalleryPage() {
                   <ImageIcon className="w-8 h-8 text-brand-red opacity-40 mb-2 group-hover:scale-110 transition-transform duration-300" />
                   <span className="text-[10px] text-gray-500 uppercase tracking-widest group-hover:text-gray-400 transition-colors">Görsel Yer Tutucu</span>
                 </div>
+
+                {/* Gerçek Görsel */}
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  sizes="(max-w-768px) 100vw, 33vw"
+                  className="object-cover z-5 transition-transform duration-500 group-hover:scale-105"
+                />
                 
                 {/* Karartma Katmanı */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent opacity-75 z-10 transition-opacity group-hover:opacity-85" />
@@ -165,18 +175,21 @@ export default function GalleryPage() {
               <ChevronLeft className="w-6 h-6" />
             </button>
 
-            {/* Büyük Görsel Çerçevesi (Yer Tutucu olarak) */}
-            <div className="max-w-4xl w-full h-[60vh] bg-gradient-to-tr from-brand-charcoal via-brand-charcoal-light to-brand-border border border-brand-border rounded-xl flex flex-col items-center justify-center p-6 text-center select-none shadow-2xl relative">
-              <ImageIcon className="w-16 h-16 text-brand-red opacity-30 mb-4" />
-              <p className="text-xs text-gray-500 uppercase tracking-widest">
-                Görsel Yer Tutucu
-              </p>
-              <p className="text-base font-extrabold uppercase text-white tracking-wider mt-4">
-                {filteredItems[lightboxIndex].caption}
-              </p>
-              <p className="text-[11px] text-brand-gray-dark max-w-sm mt-2 leading-relaxed">
-                Bu görsel yeri {filteredItems[lightboxIndex].src} dosyasını ekleyerek kolayca güncellenebilir.
-              </p>
+            {/* Büyük Görsel Çerçevesi */}
+            <div className="max-w-4xl w-full h-[60vh] rounded-xl overflow-hidden border border-brand-border relative shadow-2xl flex items-center justify-center bg-black">
+              <Image
+                src={filteredItems[lightboxIndex].src}
+                alt={filteredItems[lightboxIndex].alt}
+                fill
+                className="object-contain z-10"
+                priority
+              />
+              {/* Resim Altı Bilgi Şeridi */}
+              <div className="absolute bottom-0 left-0 right-0 bg-black/85 py-4 px-6 text-center z-20">
+                <p className="text-sm font-extrabold uppercase text-white tracking-wider">
+                  {filteredItems[lightboxIndex].caption}
+                </p>
+              </div>
             </div>
 
             {/* Sağ Ok */}

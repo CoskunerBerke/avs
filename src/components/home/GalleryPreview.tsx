@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Image as ImageIcon } from "lucide-react";
 import { galleryData } from "@/data/gallery";
 
@@ -47,6 +48,15 @@ export const GalleryPreview: React.FC = () => {
                 <ImageIcon className="w-8 h-8 text-brand-red opacity-40 mb-2 group-hover:scale-110 transition-transform duration-300" />
                 <span className="text-[10px] text-gray-500 uppercase tracking-widest group-hover:text-gray-400 transition-colors">Görsel Yer Tutucu</span>
               </div>
+
+              {/* Gerçek Görsel */}
+              <Image
+                src={item.src}
+                alt={item.alt}
+                fill
+                sizes="(max-w-768px) 100vw, 33vw"
+                className="object-cover z-5 transition-transform duration-500 group-hover:scale-105"
+              />
               
               {/* Koyu Karartma Katmanı */}
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent opacity-70 z-10 transition-opacity group-hover:opacity-85" />

@@ -31,14 +31,14 @@ export const galleryData: GalleryItem[] = [
   },
   {
     id: "g5",
-    src: "/images/gallery/inspection.webp",
+    src: "/images/vag_service_diagnostic.png",
     alt: "Ön Takım ve Yürüyen Aksam Muayenesi",
     category: "inspection",
     caption: "Rot-Balans ve Süspansiyon Güvenlik Kontrolleri"
   },
   {
     id: "g6",
-    src: "/images/gallery/general.webp",
+    src: "/images/vag_service_dsg.png",
     alt: "Müşteri Kabul ve Araç Teslimatı",
     category: "general",
     caption: "Şeffaf Servis Süreci ve Teslim Öncesi Son Kontroller"
