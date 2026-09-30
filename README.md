@@ -13,7 +13,7 @@
 
 > Client project — designed and developed by Berke Coşkuner for **AVS Service & Repair**.
 
-![AVS Service & Repair — Bartın workshop](public/images/avs_workshop_1.png)
+![AVS Service & Repair — workshop exterior](public/images/avs_workshop_1.png)
 
 ---
 
@@ -27,7 +27,7 @@ A Turkish-language, SEO-focused website for AVS Service & Repair, an automotive 
 - **Branches page** (`/subelerimiz`) and contact page listing both branches with address, phone, WhatsApp, opening hours and an embedded Google Map
 - **12 service pages** statically generated from one data file (`/hizmetler/[slug]`): periodic maintenance, fault diagnosis, engine & mechanical repair, DSG & gearbox, brakes & suspension, auto electrics, A/C, DPF & EGR, turbo, oil & filter, battery & charging, general inspection — each with checklists, symptoms and FAQs
 - **Gallery** (`/galeri`) with category filter and keyboard-friendly lightbox (Esc / arrow keys)
-- **Contact form** posting to `/api/contact`: branch selection, server-side validation, honeypot spam protection, KVKK consent check, email via Nodemailer/SMTP; logs to the server console when SMTP is not configured
+- **Contact form** posting to `/api/contact`: branch selection, honeypot spam field, server-side required-field and KVKK consent checks, email via Nodemailer/SMTP; logs to the server console when SMTP is not configured
 - **Local SEO**: JSON-LD `AutoRepair` / `Service` schemas, dynamic `sitemap.xml` and `robots.txt`
 - **Legal pages**: KVKK, privacy policy, cookie policy, cookie banner
 - **Mobile UX & accessibility**: sticky header, mobile menu, bottom action bar, WhatsApp button, keyboard navigation, `prefers-reduced-motion` support
@@ -65,7 +65,7 @@ public/images/            # Workshop photos and service images
 
 ## Getting started
 
-Requirements: Node.js 18+ and npm 9+.
+Requirements: Node.js 20.9+ (the minimum for Next.js 16) and npm.
 
 ```bash
 npm install
@@ -94,7 +94,7 @@ Create `.env.local` (values are not part of the repo):
 ## Deployment
 
 - **Vercel:** import the repository, add the environment variables above (set `NEXT_PUBLIC_SITE_URL`), deploy.
-- **Docker:** `docker build -t avs-service-web .` then `docker run -d -p 3000:3000 --env-file .env avs-service-web`
+- **Docker:** `docker build -t avs-service-web .` then `docker run -d -p 3000:3000 --env-file .env avs-service-web`. Note: the `Dockerfile` currently uses `node:18-alpine`, while Next.js 16 needs Node.js 20.9+, so update the base image before building.
 - **Ubuntu VPS:** `npm install && npm run build`, start with `pm2 start npm --name "avs-web" -- start`, and put Nginx in front as a reverse proxy to `localhost:3000`.
 
 ---
@@ -115,7 +115,7 @@ Bartın Merkez ve Zonguldak Çaycuma şubeleri bulunan AVS Service & Repair otom
 - **Şubelerimiz** sayfası: adres, telefon, WhatsApp, çalışma saatleri ve Google Haritalar
 - Statik üretilen **12 hizmet sayfası** (kontrol listeleri, belirtiler ve SSS ile)
 - Kategori filtreli, klavye destekli lightbox **galeri**
-- Şube seçimli **iletişim formu**: sunucu taraflı doğrulama, honeypot spam koruması, KVKK onayı, Nodemailer ile SMTP gönderimi
+- Şube seçimli **iletişim formu**: honeypot spam alanı, sunucu tarafında zorunlu alan ve KVKK onayı kontrolü, Nodemailer ile SMTP gönderimi
 - JSON-LD `AutoRepair` / `Service` şemaları, dinamik sitemap ve robots
 - KVKK, gizlilik ve çerez politikası sayfaları
 - Tüm firma ve şube bilgileri tek dosyada: `src/config/business.ts`
@@ -125,6 +125,8 @@ Bartın Merkez ve Zonguldak Çaycuma şubeleri bulunan AVS Service & Repair otom
 Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS 4, Nodemailer, Docker.
 
 ### Kurulum
+
+Gereksinim: Node.js 20.9+ (Next.js 16'nın alt sınırı) ve npm.
 
 ```bash
 npm install
@@ -142,7 +144,7 @@ Ortam değişkenleri (`.env.local`): `NEXT_PUBLIC_SITE_URL`, `CONTACT_EMAIL`, `S
 
 ### Yayınlama
 
-Vercel'e doğrudan import edilebilir; çok aşamalı `Dockerfile` ile Docker'da ya da Ubuntu VPS üzerinde PM2 + Nginx ile çalıştırılabilir.
+Vercel'e doğrudan import edilebilir; çok aşamalı `Dockerfile` ile Docker'da ya da Ubuntu VPS üzerinde PM2 + Nginx ile çalıştırılabilir. `Dockerfile` şu an `node:18-alpine` kullandığından, derlemeden önce Node.js 20.9+ içeren bir imaja güncellenmelidir.
 
 ---
 
